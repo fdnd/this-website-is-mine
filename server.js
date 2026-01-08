@@ -5,10 +5,10 @@ import { Liquid } from 'liquidjs';
 const app = express()
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
+
 const engine = new Liquid();
 app.engine('liquid', engine.express()); 
 app.set('views', './views')
-
 
 app.get('/', async function (request, response) {
 
@@ -29,8 +29,6 @@ app.get('/all', async function (request, response) {
   })
 
 })
-
-
 
 app.get('/mywebsite/:id', async function (request, response) {
 
